@@ -1,0 +1,25 @@
+﻿@model HTTShop.Models.Product
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+<div class="row">
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="col-8 col-sm-6">
+                <h1>@Model.Name</h1>
+                <h4>@Model.Description</h4>
+                <p class="card-text"><small class="text-muted">@Model.Category.Name</small></p>
+                <p class="card-text"><small class="text-muted">@Model.Price $</small></p>
+            </div>
+            <div class="col-4 col-sm-6">
+                <img src="/img/@Model.Id.ToString()_.jpg" class="card-img-top" alt="@Model.Category.Name">
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<div>
+    <a asp-action="Index">Back to Home</a>
+</div>

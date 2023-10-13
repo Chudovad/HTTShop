@@ -1,0 +1,25 @@
+﻿﻿@{
+    ViewData["Title"] = "Products";
+    @model IEnumerable<HTTShop.Models.Product>;
+
+}
+
+<div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card">
+                    <img src="/img/@Html.DisplayFor(modelItem => item.Id)_.jpg" class="card-img-top" alt="@Html.DisplayFor(modelItem => item.Name)">
+                    <div class="card-body">
+                        <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5></a>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                        <p class="card-text"><small class="text-muted">@Html.DisplayFor(modelItem => item.Category.Name)</small></p>
+                        <p class="card-text"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price) $</small></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
